@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Anand's AI and Machine Learning engineering portfolio.">
+  <meta name="description" content="Anand's AI and Machine Learning portfolio.">
   <title>Anand | AI/ML Portfolio</title>
 
   <style>
@@ -97,15 +97,16 @@
       min-width: 0;
     }
 
-    /* Profile photo */
+    /* Profile photo - fixed square size */
     .profile-img {
-      width: 150px;
-      height: 150px;
-      padding: 4px;
-      margin-bottom: 24px;
+      width: 110px;
+      height: 110px;
+      padding: 3px;
+      margin-bottom: 18px;
       border-radius: 50%;
       background: linear-gradient(135deg, #00d9ff, #8b5cf6);
-      box-shadow: 0 0 25px rgba(0, 217, 255, 0.25);
+      box-shadow: 0 0 20px rgba(0, 217, 255, 0.25);
+      overflow: hidden;
       flex-shrink: 0;
     }
 
@@ -172,7 +173,7 @@
       transform: translateY(-2px);
     }
 
-    /* Sections */
+    /* General sections */
     section:not(.hero) {
       padding: 65px 0;
       border-top: 1px solid #182238;
@@ -265,6 +266,7 @@
       text-decoration: underline;
     }
 
+    /* Footer */
     footer {
       text-align: center;
       padding: 25px 0;
@@ -273,7 +275,7 @@
       font-size: 0.9rem;
     }
 
-    /* Mobile responsive design */
+    /* Mobile layout */
     @media (max-width: 700px) {
       .nav-inner {
         align-items: flex-start;
@@ -296,8 +298,8 @@
       }
 
       .profile-img {
-        width: 120px;
-        height: 120px;
+        width: 110px;
+        height: 110px;
         margin-bottom: 18px;
       }
 
@@ -471,6 +473,36 @@
 
         <p>
           LinkedIn:
+          <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/">
+            Connect with me
+          </a>
+        </p>
+
+        <p>
+          Email:
+          <a href="mailto:YOUR-EMAIL@example.com">
+            YOUR-EMAIL@example.com
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Anand · Built with curiosity and code.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+dIn:
           <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/">
             Connect with me
           </a>
