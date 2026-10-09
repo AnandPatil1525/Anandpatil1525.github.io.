@@ -4,323 +4,502 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080d18">
   <meta name="description" content="Anand's AI and Machine Learning engineering portfolio.">
-  <title>Anand | AI/ML Engineer</title>
+  <title>Anand | AI/ML Portfolio</title>
+
   <style>
-    :root {
-      --bg: #080d18;
-      --panel: #101a2b;
-      --text: #edf4ff;
-      --muted: #a4b2c9;
-      --cyan: #66e3ff;
-      --purple: #a78bfa;
-      --border: #263650;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: Arial, sans-serif;
+      background: #080d18;
+      color: #e8eefc;
       line-height: 1.7;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .container { width: min(1080px, 90%); margin: auto; }
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
 
-    header {
+    /* Navigation */
+    nav {
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(8,13,24,.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(8, 13, 24, 0.95);
+      border-bottom: 1px solid #1d2940;
     }
 
-    nav {
-      min-height: 70px;
+    .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 20px;
+      padding: 16px 0;
     }
 
-    .logo { font-size: 1.3rem; font-weight: 800; }
-    .logo span, .accent { color: var(--cyan); }
-
-    .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
-    .nav-links a { color: var(--muted); font-size: .92rem; }
-    .nav-links a:hover { color: var(--cyan); }
-
-    .hero {
-      min-height: 76vh;
-      display: flex;
-      align-items: center;
-      padding: 85px 0;
-      background:
-        radial-gradient(ellipse at 85% 20%, #18335370, transparent 48%),
-        radial-gradient(ellipse at 10% 90%, #39245a50, transparent 40%);
-    }
-
-    .eyebrow {
-      color: var(--cyan);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: .8rem;
-      font-weight: 700;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 8vw, 5rem);
-      line-height: 1.12;
-      letter-spacing: -2px;
-      margin: 18px 0;
-    }
-
-    h1 span {
-      background: linear-gradient(90deg, var(--cyan), var(--purple));
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #00d9ff, #a855f7);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
-    .hero p, .section-intro { color: var(--muted); max-width: 650px; }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
 
-    .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+    .nav-links a:hover {
+      color: #00d9ff;
+    }
+
+    /* Hero section */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 65px 0;
+      background: radial-gradient(
+        circle at 85% 25%,
+        rgba(124, 58, 237, 0.15),
+        transparent 35%
+      );
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      width: 100%;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Profile photo */
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      padding: 4px;
+      margin-bottom: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00d9ff, #8b5cf6);
+      box-shadow: 0 0 25px rgba(0, 217, 255, 0.25);
+      flex-shrink: 0;
+    }
+
+    .profile-img img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border: 3px solid #080d18;
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #00d9ff, #a855f7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      color: #b8c6e3;
+      font-size: 1.2rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-description {
+      color: #aab8d2;
+      max-width: 570px;
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
 
     .btn {
       display: inline-block;
       padding: 11px 20px;
-      border: 1px solid var(--cyan);
-      border-radius: 9px;
-      font-weight: 700;
+      border-radius: 8px;
+      font-weight: bold;
+      border: 1px solid #00d9ff;
+      transition: transform 0.2s ease;
     }
 
-    .btn.primary { background: var(--cyan); color: #07111b; }
-    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: #00d9ff;
+      color: #080d18;
+    }
 
-    section { padding: 75px 0; }
+    .btn-secondary {
+      color: #00d9ff;
+    }
 
-    .section-title { font-size: 2rem; margin-bottom: 10px; }
-    .section-intro { margin-bottom: 28px; }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
-    .grid {
+    /* Sections */
+    section:not(.hero) {
+      padding: 65px 0;
+      border-top: 1px solid #182238;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      color: #aab8d2;
+      margin-bottom: 28px;
+    }
+
+    .about-text {
+      max-width: 800px;
+      color: #c0cbe0;
+    }
+
+    /* Skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      border: 1px solid #273653;
+      background: #101a2b;
+      padding: 10px 16px;
+      border-radius: 8px;
+      color: #bdefff;
+    }
+
+    /* Projects */
+    .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
     }
 
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
+    .project-card {
       padding: 24px;
-      border-radius: 15px;
-      transition: transform .2s, border-color .2s;
+      border: 1px solid #263552;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #101a2b, #0b1120);
+      transition: transform 0.2s ease,
+                  border-color 0.2s ease;
     }
 
-    .card:hover { transform: translateY(-5px); border-color: var(--cyan); }
-    .card h3 { margin-bottom: 9px; }
-    .card p { color: var(--muted); }
-    .project-icon { font-size: 1.7rem; margin-bottom: 12px; }
-
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-
-    .tag {
-      font-size: .8rem;
-      color: var(--cyan);
-      background: #102b3b;
-      padding: 4px 10px;
-      border-radius: 20px;
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: #00d9ff;
     }
 
-    .project-link {
-      display: inline-block;
-      margin-top: 18px;
-      color: var(--cyan);
-      font-weight: 650;
+    .project-card h3 {
+      margin-bottom: 10px;
+      color: #00d9ff;
     }
 
-    .contact-card { text-align: center; }
-    .contact-card p { margin: 10px auto 22px; }
+    .project-card p {
+      color: #b8c6e3;
+      margin-bottom: 14px;
+    }
+
+    .project-tag {
+      color: #c4a5fd;
+      font-size: 0.9rem;
+    }
+
+    /* Contact */
+    .contact-card {
+      padding: 25px;
+      border: 1px solid #263552;
+      border-radius: 14px;
+      background: #101a2b;
+    }
+
+    .contact-card p {
+      margin: 8px 0;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-card a {
+      color: #00d9ff;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
 
     footer {
       text-align: center;
       padding: 25px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: .9rem;
+      border-top: 1px solid #182238;
+      color: #8190ad;
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 540px) {
-      nav { align-items: flex-start; flex-direction: column; padding: 14px 0; }
-      .nav-links { gap: 14px; }
-      .hero { min-height: 65vh; padding: 65px 0; }
-      h1 { letter-spacing: -1px; }
-      section { padding: 55px 0; }
+    /* Mobile responsive design */
+    @media (max-width: 700px) {
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 55px 0;
+      }
+
+      .hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .profile-img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 18px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section:not(.hero) {
+        padding: 45px 0;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <nav class="container">
-      <a class="logo" href="#home">Anand<span>.DEV</span></a>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-inner">
+      <a class="logo" href="#home">ANAND.DEV</a>
+
       <div class="nav-links">
+        <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container">
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="hero-text">
+
+        <!-- Profile photo -->
         <div class="profile-img">
-  <img src="IMG_8729.jpg" alt="Anand's profile photo">
-</div>
-        <p class="eyebrow">Hello, world! I'm Anand</p>
-        <h1>Aspiring AI/ML Engineer<br>
-          <span>Building the future.</span>
+          <img
+            src="IMG_8729.jpj"
+            alt="Anand's profile photo"
+          >
+        </div>
+
+        <h1>
+          Hi, I'm <span class="gradient-text">Anand</span>
         </h1>
-        <p>
-          I'm an AIML engineering student passionate about Python,
-          Artificial Intelligence, Machine Learning and solving
-          real-world problems through technology.
+
+        <p class="subtitle">Aspiring AI/ML Engineer</p>
+
+        <p class="hero-description">
+          I'm an Artificial Intelligence and Machine Learning student
+          passionate about Python, intelligent systems, and solving
+          real-world problems through technology. I'm learning,
+          building projects, and growing my skills every day.
         </p>
-        <div class="actions">
-          <a class="btn primary" href="#projects">Explore my projects ↗</a>
-          <a class="btn" href="#contact">Contact me</a>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="#projects">
+            Explore My Projects
+          </a>
+
+          <a class="btn btn-secondary" href="#contact">
+            Contact Me
+          </a>
         </div>
-      </div>
-    </section>
 
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">About <span class="accent">Me</span></h2>
-        <p class="section-intro">
-          I'm an Artificial Intelligence and Machine Learning engineering
-          student developing my programming skills one project at a time.
-          I enjoy learning how intelligent systems work and turning ideas
-          into practical applications. I'm building my foundation through
-          consistent practice and hands-on projects.
-        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="skills">
-      <div class="container">
-        <h2 class="section-title">My <span class="accent">Skills</span></h2>
-        <p class="section-intro">
-          Technologies I'm learning and practicing.
-        </p>
-        <div class="grid">
-          <article class="card">
-            <div class="project-icon">🐍</div>
-            <h3>Programming</h3>
-            <p>Python and C programming fundamentals.</p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">C</span>
-            </div>
-          </article>
-          <article class="card">
-            <div class="project-icon">🧠</div>
-            <h3>AI & Machine Learning</h3>
-            <p>Building a foundation in AI, data and ML concepts.</p>
-            <div class="tags">
-              <span class="tag">AI</span>
-              <span class="tag">Machine Learning</span>
-            </div>
-          </article>
-          <article class="card">
-            <div class="project-icon">🌐</div>
-            <h3>Web Development</h3>
-            <p>Creating websites and learning how to publish them.</p>
-            <div class="tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">GitHub</span>
-            </div>
-          </article>
-        </div>
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">
+        About <span class="gradient-text">Me</span>
+      </h2>
+
+      <p class="about-text">
+        I'm an AIML engineering student building a strong foundation
+        in programming, problem-solving, and artificial intelligence.
+        My goal is to turn what I learn into practical projects,
+        develop industry-relevant skills, and prepare for internship
+        opportunities.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">
+        My <span class="gradient-text">Skills</span>
+      </h2>
+
+      <p class="section-intro">
+        Technologies I'm learning and practising.
+      </p>
+
+      <div class="skills">
+        <span class="skill">Python</span>
+        <span class="skill">C Programming</span>
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">GitHub</span>
+        <span class="skill">Artificial Intelligence</span>
+        <span class="skill">Machine Learning</span>
+        <span class="skill">Problem Solving</span>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
-        <p class="section-intro">
-          My project ideas and learning journey. I'll add working demos
-          and source code as each project is built.
-        </p>
-        <div class="grid">
-          <article class="card">
-            <div class="project-icon">🌍</div>
-            <h3>Language Translation</h3>
-            <p>
-              A planned multilingual translation website designed to
-              help users explore translations between languages.
-            </p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Web</span>
-            </div>
-            <span class="project-link">In development ↗</span>
-          </article>
-          <article class="card">
-            <div class="project-icon">🤖</div>
-            <h3>AI Chatbot</h3>
-            <p>
-              A learning project to explore conversational interfaces
-              and Python-based chatbot development.
-            </p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">AI</span>
-            </div>
-            <span class="project-link">Planned ↗</span>
-          </article>
-          <article class="card">
-            <div class="project-icon">💡</div>
-            <h3>More Projects Soon</h3>
-            <p>
-              I'll add new projects here as I learn, experiment
-              and build useful applications.
-            </p>
-            <div class="tags">
-              <span class="tag">Learning</span>
-              <span class="tag">Building</span>
-            </div>
-            <span class="project-link">Coming soon ↗</span>
-          </article>
-        </div>
-      </div>
-    </section>
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">
+        My <span class="gradient-text">Projects</span>
+      </h2>
 
-    <section id="contact">
-      <div class="container">
-        <div class="card contact-card">
-          <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
+      <p class="section-intro">
+        Projects I'm developing and planning as I learn.
+      </p>
+
+      <div class="project-grid">
+
+        <article class="project-card">
+          <h3>Language Translation Website</h3>
           <p>
-            I'm learning, building and looking forward to connecting
-            with people in AI, Machine Learning and software development.
+            A planned web project focused on helping users translate
+            text between languages through a simple interface.
           </p>
-          <!-- Replace these links with your real profile URLs. -->
-          <div class="actions" style="justify-content:center">
-            <a class="btn primary"
-               href="https://github.com/" target="_blank"
-               rel="noopener noreferrer">GitHub ↗</a>
-            <a class="btn"
-               href="https://www.linkedin.com/" target="_blank"
-               rel="noopener noreferrer">LinkedIn ↗</a>
-            <!-- Add your email link after replacing the example address. -->
-          </div>
+          <span class="project-tag">
+            HTML · CSS · JavaScript
+          </span>
+        </article>
+
+        <article class="project-card">
+          <h3>Python AI Chatbot</h3>
+          <p>
+            A learning project to explore chatbot logic, Python
+            programming, and the basics of conversational systems.
+          </p>
+          <span class="project-tag">
+            Python · AI Fundamentals
+          </span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">
+        Let's <span class="gradient-text">Connect</span>
+      </h2>
+
+      <p class="section-intro">
+        I'm interested in learning, collaborating, and exploring
+        opportunities to grow as an AI/ML engineer.
+      </p>
+
+      <div class="contact-card">
+        <p>
+          GitHub:
+          <a href="https://github.com/YOUR-USERNAME">
+            Visit my GitHub
+          </a>
+        </p>
+
+        <p>
+          LinkedIn:
+          <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/">
+            Connect with me
+          </a>
+        </p>
+
+        <p>
+          Email:
+          <a href="mailto:YOUR-EMAIL@example.com">
+            YOUR-EMAIL@example.com
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Anand · Built with curiosity and code.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
         </div>
       </div>
     </section>
