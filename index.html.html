@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="Aanu's AI and Machine Learning engineering portfolio.">
+  <title>Aanu | AI/ML Engineer</title>
+  <style>
+    :root {
+      --bg: #080d18;
+      --panel: #101a2b;
+      --text: #edf4ff;
+      --muted: #a4b2c9;
+      --cyan: #66e3ff;
+      --purple: #a78bfa;
+      --border: #263650;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: min(1080px, 90%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8,13,24,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo { font-size: 1.3rem; font-weight: 800; }
+    .logo span, .accent { color: var(--cyan); }
+
+    .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); font-size: .92rem; }
+    .nav-links a:hover { color: var(--cyan); }
+
+    .hero {
+      min-height: 76vh;
+      display: flex;
+      align-items: center;
+      padding: 85px 0;
+      background:
+        radial-gradient(ellipse at 85% 20%, #18335370, transparent 48%),
+        radial-gradient(ellipse at 10% 90%, #39245a50, transparent 40%);
+    }
+
+    .eyebrow {
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin: 18px 0;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p, .section-intro { color: var(--muted); max-width: 650px; }
+
+    .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 20px;
+      border: 1px solid var(--cyan);
+      border-radius: 9px;
+      font-weight: 700;
+    }
+
+    .btn.primary { background: var(--cyan); color: #07111b; }
+    .btn:hover { transform: translateY(-2px); }
+
+    section { padding: 75px 0; }
+
+    .section-title { font-size: 2rem; margin-bottom: 10px; }
+    .section-intro { margin-bottom: 28px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 24px;
+      border-radius: 15px;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .card:hover { transform: translateY(-5px); border-color: var(--cyan); }
+    .card h3 { margin-bottom: 9px; }
+    .card p { color: var(--muted); }
+    .project-icon { font-size: 1.7rem; margin-bottom: 12px; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+
+    .tag {
+      font-size: .8rem;
+      color: var(--cyan);
+      background: #102b3b;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--cyan);
+      font-weight: 650;
+    }
+
+    .contact-card { text-align: center; }
+    .contact-card p { margin: 10px auto 22px; }
+
+    footer {
+      text-align: center;
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 540px) {
+      nav { align-items: flex-start; flex-direction: column; padding: 14px 0; }
+      .nav-links { gap: 14px; }
+      .hero { min-height: 65vh; padding: 65px 0; }
+      h1 { letter-spacing: -1px; }
+      section { padding: 55px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">AANU<span>.DEV</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <p class="eyebrow">Hello, world! I'm Aanu</p>
+        <h1>Aspiring AI/ML Engineer<br>
+          <span>Building the future.</span>
+        </h1>
+        <p>
+          I'm an AIML engineering student passionate about Python,
+          Artificial Intelligence, Machine Learning and solving
+          real-world problems through technology.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my projects ↗</a>
+          <a class="btn" href="#contact">Contact me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+        <p class="section-intro">
+          I'm an Artificial Intelligence and Machine Learning engineering
+          student developing my programming skills one project at a time.
+          I enjoy learning how intelligent systems work and turning ideas
+          into practical applications. I'm building my foundation through
+          consistent practice and hands-on projects.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">My <span class="accent">Skills</span></h2>
+        <p class="section-intro">
+          Technologies I'm learning and practicing.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <div class="project-icon">🐍</div>
+            <h3>Programming</h3>
+            <p>Python and C programming fundamentals.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">C</span>
+            </div>
+          </article>
+          <article class="card">
+            <div class="project-icon">🧠</div>
+            <h3>AI & Machine Learning</h3>
+            <p>Building a foundation in AI, data and ML concepts.</p>
+            <div class="tags">
+              <span class="tag">AI</span>
+              <span class="tag">Machine Learning</span>
+            </div>
+          </article>
+          <article class="card">
+            <div class="project-icon">🌐</div>
+            <h3>Web Development</h3>
+            <p>Creating websites and learning how to publish them.</p>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">GitHub</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+        <p class="section-intro">
+          My project ideas and learning journey. I'll add working demos
+          and source code as each project is built.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <div class="project-icon">🌍</div>
+            <h3>Language Translation</h3>
+            <p>
+              A planned multilingual translation website designed to
+              help users explore translations between languages.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Web</span>
+            </div>
+            <span class="project-link">In development ↗</span>
+          </article>
+          <article class="card">
+            <div class="project-icon">🤖</div>
+            <h3>AI Chatbot</h3>
+            <p>
+              A learning project to explore conversational interfaces
+              and Python-based chatbot development.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">AI</span>
+            </div>
+            <span class="project-link">Planned ↗</span>
+          </article>
+          <article class="card">
+            <div class="project-icon">💡</div>
+            <h3>More Projects Soon</h3>
+            <p>
+              I'll add new projects here as I learn, experiment
+              and build useful applications.
+            </p>
+            <div class="tags">
+              <span class="tag">Learning</span>
+              <span class="tag">Building</span>
+            </div>
+            <span class="project-link">Coming soon ↗</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="card contact-card">
+          <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
+          <p>
+            I'm learning, building and looking forward to connecting
+            with people in AI, Machine Learning and software development.
+          </p>
+          <!-- Replace these links with your real profile URLs. -->
+          <div class="actions" style="justify-content:center">
+            <a class="btn primary"
+               href="https://github.com/" target="_blank"
+               rel="noopener noreferrer">GitHub ↗</a>
+            <a class="btn"
+               href="https://www.linkedin.com/" target="_blank"
+               rel="noopener noreferrer">LinkedIn ↗</a>
+            <!-- Add your email link after replacing the example address. -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Designed & built by Aanu · <span id="year"></span></p>
+      <p>Learning today. Building tomorrow. ✨</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
+
